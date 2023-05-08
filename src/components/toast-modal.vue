@@ -45,16 +45,21 @@ export default {
 
 <style scoped>
 .toast-modal {
-  width: 200px;
+  @media (max-width: 768px) {
+    width: 100%;
+    left: 0;
+  }
+
   height: auto;
   bottom: 0;
   padding: 8px;
   position: absolute;
-  left: calc(50% - 100px);
   border-radius: 5px 5px 0 0;
   color: white;
   transition: all 2s ease;
   z-index: 1;
+  width: 500px;
+  left: calc(50% - 250px);
 }
 .sucesso {
   background-color: #88b04b;

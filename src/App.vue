@@ -1,7 +1,20 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link>
-  </nav>
+  <v-toolbar theme="dark">
+    <v-toolbar-title class="titulo">Viagem Turismo</v-toolbar-title>
+    <v-tooltip text="Página de compras" location="left">
+      <template v-slot:activator="{ props }">
+        <!-- Um redirect só para ficar visivel pro usuário, apesar de mandar pra mesma página -->
+        <mdicon
+          v-bind="props"
+          name="cart-arrow-down"
+          size="32"
+          class="compra"
+          to="/"
+        >
+        </mdicon>
+      </template>
+    </v-tooltip>
+  </v-toolbar>
   <router-view />
 </template>
 
@@ -13,17 +26,15 @@
   text-align: center;
   color: #2c3e50;
 }
+</style>
 
-nav {
-  padding: 30px;
-}
-
-nav a {
+<style scoped>
+.titulo {
+  font-size: 24px;
   font-weight: bold;
-  color: #2c3e50;
 }
-
-nav a.router-link-exact-active {
-  color: #42b983;
+.compra {
+  margin-right: 16px;
+  cursor: pointer;
 }
 </style>
