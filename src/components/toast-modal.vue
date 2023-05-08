@@ -6,7 +6,11 @@
           {{ toast.mensagem }}
         </v-col>
         <v-col sm="2">
-          <mdicon name="close" class="clickable" @click="fechaToast" />
+          <mdicon
+            name="close"
+            class="tm__icon--clickable"
+            @click="fechaToast"
+          />
         </v-col>
       </v-row>
     </div>
@@ -43,7 +47,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .toast-modal {
   @media (max-width: 768px) {
     width: 100%;
@@ -60,15 +64,16 @@ export default {
   z-index: 1;
   width: 500px;
   left: calc(50% - 250px);
+
+  .tm__icon--clickable {
+    cursor: pointer;
+  }
 }
 .sucesso {
   background-color: #88b04b;
 }
 .erro {
   background-color: #ed4337;
-}
-.clickable {
-  cursor: pointer;
 }
 .fade-enter-active,
 .fade-leave-active {

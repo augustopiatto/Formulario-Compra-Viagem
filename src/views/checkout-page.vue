@@ -1,6 +1,6 @@
 <template>
   <div class="checkout-page">
-    <v-form ref="form" class="form">
+    <v-form ref="form" class="cp__form">
       <v-row align="center" justify="space-between">
         <v-col>
           <v-autocomplete
@@ -14,7 +14,7 @@
           <template v-slot:activator="{ props }">
             <mdicon
               v-bind="props"
-              class="clickable"
+              class="cpf__icon--clickable"
               name="swap-horizontal"
               required
               @click="inverteDestinos"
@@ -70,7 +70,7 @@
       />
       <v-row justify="end">
         <v-btn
-          class="botao"
+          class="cpf__button--width"
           color="primary"
           size="large"
           :loading="carregando"
@@ -84,7 +84,7 @@
           <template v-slot:activator="{ props }">
             <v-btn
               v-bind="props"
-              class="botao"
+              class="cpf__button--width"
               color="pink"
               size="large"
               @click="preencherTudo"
@@ -180,29 +180,31 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .checkout-page {
   padding: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.form {
-  @media (max-width: 768px) {
-    max-width: 90%;
+
+  .cp__form {
+    @media (max-width: 768px) {
+      max-width: 90%;
+    }
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .cpf__icon--clickable {
+      cursor: pointer;
+    }
+    .cpf__button--width {
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+    }
   }
-  width: 800px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-.botao {
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-}
-.clickable {
-  cursor: pointer;
 }
 .v-row + .v-row {
   margin-top: -12px;

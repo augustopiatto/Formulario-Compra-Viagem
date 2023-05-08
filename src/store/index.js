@@ -1,9 +1,11 @@
 import { createStore } from "vuex";
 
+const DURACAO_PADRAO = 5000; // 5 segundos
+
 export default createStore({
   state: {
     toast: {
-      duracao: 3000,
+      duracao: DURACAO_PADRAO,
       mensagem: "",
       tipo: "erro",
     },
@@ -15,7 +17,7 @@ export default createStore({
   },
   mutations: {
     toast(state, obj) {
-      state.toast.duracao = obj.duracao || 5000;
+      state.toast.duracao = obj.duracao || DURACAO_PADRAO;
       state.toast.mensagem = obj.mensagem;
       state.toast.tipo = obj.tipo;
     },
