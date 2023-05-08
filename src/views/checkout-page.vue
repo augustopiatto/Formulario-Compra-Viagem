@@ -103,6 +103,7 @@ import rules from "../helpers/rules";
 import toastModal from "../components/toast-modal.vue";
 
 export default {
+  name: "CheckoutPage",
   components: {
     toastModal,
   },
