@@ -5,7 +5,6 @@
         <v-col>
           <v-autocomplete
             v-model="origem"
-            clearable
             label="Origem"
             :items="cidadesFiltradas"
             :rules="[rules.campoObrigatorio]"
@@ -25,7 +24,6 @@
         <v-col>
           <v-autocomplete
             v-model="destino"
-            clearable
             label="Destino"
             :items="cidadesFiltradas"
             :rules="[rules.campoObrigatorio]"
@@ -72,13 +70,28 @@
       />
       <v-row justify="end">
         <v-btn
+          class="botao"
           color="primary"
           size="large"
-          class="botao"
           :loading="carregando"
           @click="enviar"
           >Enviar</v-btn
         >
+      </v-row>
+      <v-spacer />
+      <v-row justify="end">
+        <v-tooltip text="Somente para testes" location="top">
+          <template v-slot:activator="{ props }">
+            <v-btn
+              v-bind="props"
+              class="botao"
+              color="pink"
+              size="large"
+              @click="preencherTudo"
+              >Preencher automaticamente</v-btn
+            >
+          </template>
+        </v-tooltip>
       </v-row>
     </v-form>
     <toast-modal />
@@ -150,6 +163,15 @@ export default {
       const origem = this.origem;
       this.origem = this.destino;
       this.destino = origem;
+    },
+    preencherTudo() {
+      this.origem = "São José dos Campos";
+      this.destino = "Jacareí";
+      this.dataIda = "2023-05-09";
+      this.dataVolta = "2023-05-10";
+      this.qtdPassageiros = 10;
+      this.passageiroPrincipal = "Rodolfo Clemildo Santos";
+      this.emailPrincipal = "jcs@example.com";
     },
     resetarInputs() {
       this.$refs.form.reset();
