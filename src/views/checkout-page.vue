@@ -52,12 +52,24 @@
           />
         </v-col>
       </v-row>
-      <v-text-field
-        v-model="qtdPassageiros"
-        label="Quantidade de passageiros"
-        type="number"
-        :rules="[rules.campoObrigatorio]"
-      />
+      <v-row justify="space-between">
+        <v-col>
+          <!-- Adulto é obrigatório para viajar, criança não -->
+          <v-text-field
+            v-model="qtdPassageirosAdulto"
+            label="Quantidade de passageiros adultos"
+            type="number"
+            :rules="[rules.campoObrigatorio]"
+          />
+        </v-col>
+        <v-col>
+          <v-text-field
+            v-model="qtdPassageirosCrianca"
+            label="Quantidade de passageiros crianças"
+            type="number"
+          />
+        </v-col>
+      </v-row>
       <v-text-field
         v-model="passageiroPrincipal"
         label="Nome do passageiro principal"
@@ -123,7 +135,8 @@ export default {
       emailPrincipal: null,
       origem: null,
       passageiroPrincipal: null,
-      qtdPassageiros: null,
+      qtdPassageirosAdulto: null,
+      qtdPassageirosCrianca: null,
       rules,
     };
   },
@@ -170,7 +183,8 @@ export default {
       this.destino = "Jacareí";
       this.dataIda = "2023-05-09";
       this.dataVolta = "2023-05-10";
-      this.qtdPassageiros = 10;
+      this.qtdPassageirosAdulto = 5;
+      this.qtdPassageirosCrianca = 1;
       this.passageiroPrincipal = "Rodolfo Clemildo Santos";
       this.emailPrincipal = "jcs@example.com";
     },
