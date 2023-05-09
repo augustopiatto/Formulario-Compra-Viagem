@@ -33,6 +33,6 @@ O projeto possui as seguintes funcionalidades:
 ## Scripts
 O projeto inclui os seguintes scripts:
 
-```npm run serve```: Inicia o servidor de desenvolvimento
-```npm run build```: Builda o aplicativo pronto para produção
-```npm run lint```: Linta e corrige os arquivos
+- ```npm run serve```: Inicia o servidor de desenvolvimento
+- ```npm run build```: Builda o aplicativo pronto para produção
+- ```npm run lint```: Linta e corrige os arquivos
