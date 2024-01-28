@@ -1,4 +1,4 @@
-# Wizzi
+# Formulário de Compra de Viagem
 
 ## Visão Geral do Projeto
 Utiliza Vue 3, Javascript e Vuetify 3.
